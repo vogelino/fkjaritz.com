@@ -1,5 +1,7 @@
 ---
-
+import BgVideo from '@/components/BgVideo.astro'
+import Footer from '@/components/Footer.astro'
+import '@/styles/global.css'
 ---
 
 <html lang="en">
@@ -8,9 +10,35 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<meta
+			name="description"
+			content="A research-based practice, challenging the human-made distinction between nature and culture. Acknowledging the fragility of human habitats, RE-GARDS addresses and challenges sociocultural premises, legal frameworks, and built infrastructures."
+		/>
+		<title>RE-GARDS</title>
+
+		<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href="/font/HostGrotesk[wght].woff2"
+			crossorigin
+		/>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body
+		class="bg-gray-900 w-screen h-screen overflow-clip antialiased font-medium"
+	>
+		<BgVideo />
+		<main
+			class="fixed top-0 left-0 z-20 bottom-auto w-screen max-w-prose text-gray-200 p-4 flex flex-col gap-1"
+		>
+			<h1 class="text-lg">RE-GARDS</h1>
+			<p class="leading-tight pr-6">
+				A research-based practice, challenging the human-made distinction
+				between nature and culture. Acknowledging the fragility of human
+				habitats, RE-GARDS addresses and challenges sociocultural premises,
+				legal frameworks, and built infrastructures.
+			</p>
+		</main>
+		<Footer />
 	</body>
 </html>
