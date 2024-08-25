@@ -4,9 +4,8 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				headlines: ['Host Grotesk', 'sans-serif'],
+				headlines: ['Lora', 'serif'],
 			},
 		},
 	},
-	plugins: [],
 }

@@ -4,13 +4,20 @@
 
 @layer base {
 	@font-face {
-		font-family: 'Host Grotesk';
-		src: url('/font/HostGrotesk[wght].woff2') format('woff2');
+		font-family: 'Lora';
+		src: url('/font/Lora-VariableFont_wght.ttf') format('truetype');
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Lora';
+		src: url('/font/Lora-Italic-VariableFont_wght.ttf') format('truetype');
+		font-style: italic;
 	}
 
 	html,
 	body {
-		font-family: 'Host Grotesk', sans-serif;
+		font-family: 'Lora', serif;
 	}
 
 	body::after {

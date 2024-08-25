@@ -1,6 +1,5 @@
 ---
-import BgVideo from '@/components/BgVideo.astro'
-import Footer from '@/components/Footer.astro'
+import BgImage from '@/components/BgImage.astro'
 import '@/styles/global.css'
 ---
 
@@ -12,33 +11,72 @@ import '@/styles/global.css'
 		<meta name="generator" content={Astro.generator} />
 		<meta
 			name="description"
-			content="A research-based practice, challenging the human-made distinction between nature and culture. Acknowledging the fragility of human habitats, RE-GARDS addresses and challenges sociocultural premises, legal frameworks, and built infrastructures."
+			content="Florian Kilian Jaritz is an architect and researcher based in Zurich, CH."
 		/>
-		<title>RE-GARDS</title>
+		<title>Florian Kilian Jaritz</title>
 
 		<link
 			rel="preload"
 			as="font"
-			type="font/woff2"
-			href="/font/HostGrotesk[wght].woff2"
+			type="font/ttf"
+			href="/font/Lora-Italic-VariableFont_wght.ttf"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			as="font"
+			type="font/ttf"
+			href="/font/Lora-VariableFont_wght.ttf"
 			crossorigin
 		/>
 	</head>
 	<body
-		class="bg-gray-900 w-screen h-screen overflow-clip antialiased font-medium"
+		class="bg-[#c8c5cb] w-screen h-screen overflow-clip antialiased font-medium"
 	>
-		<BgVideo />
+		<BgImage />
 		<main
-			class="fixed top-0 left-0 z-20 bottom-auto w-screen max-w-prose text-gray-200 p-4 flex flex-col gap-1"
+			class="fixed inset-0 z-20 w-screen text-gray-200 p-4 flex flex-col items-center justify-center gap-1"
 		>
-			<h1 class="text-lg">RE-GARDS</h1>
-			<p class="leading-tight pr-6">
-				A research-based practice, challenging the human-made distinction
-				between nature and culture. Acknowledging the fragility of human
-				habitats, RE-GARDS addresses and challenges sociocultural premises,
-				legal frameworks, and built infrastructures.
+			<h1
+				class="text-lg bg-black text-white inline-block px-2 py-0.5 mb-12 uppercase italic leading-tight"
+			>
+				Florian Kilian Jaritz
+			</h1>
+			<p class="leading-tight bg-black text-white px-2 py-0.5 text-center">
+				is an architect and researcher based in Zurich, CH.
 			</p>
+			<ul class="mt-6
+				flex
+				flex-col
+				gap-0.5
+				justify-center
+				items-center">
+				<li>
+					<a
+						title="Email of Florian Kilian Jaritz"
+						href="mailto:mail@fkjaritz.com"
+						class="bg-black text-white px-2 py-0.5"
+					>
+						mail@fkjaritz.com
+					</a>
+				</li>
+				<li>
+					<a
+						href="https://www.instagram.com/floriankjaritz"
+						title="Instagram of Florian Kilian Jaritz"
+						class="bg-black text-white px-2 py-0.5"
+					>
+						@floriankjaritz
+					</a>
+				</li>
+				<li>
+					<a
+						href="tel:+4901747892062"
+						title="Phone number of Florian Kilian Jaritz"
+						class="bg-black text-white px-2 py-0.5">+49 (0) 174 789 2062</a
+					>
+				</li>
+			</ul>
 		</main>
-		<Footer />
 	</body>
 </html>
