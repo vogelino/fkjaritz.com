@@ -52,7 +52,7 @@ import '@/styles/global.css'
 			class="w-screen max-xl:py-[10vh] p-4 flex flex-col justify-between xl:grid grid-cols-[2fr_4fr_3fr] text-sm h-screen xl:h-fit xl:gap-8"
 		>
 			<h1 class="inline-block">Florian Kilian Jaritz</h1>
-			<div class="flex flex-col">
+			<div class="flex flex-col pointer-events-none">
 				<p class="text-pretty">
 					is an architect (MSc. ETH) and researcher based in Zurich,
 					Switzerland.
@@ -67,7 +67,7 @@ import '@/styles/global.css'
 						href="https://caruso.arch.ethz.ch"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="underline decoration-1 underline-offset-2 decoration-gray-500 hover:decoration-gray-300 focus-visible:outline-offset-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline"
+						class="underline decoration-1 underline-offset-2 decoration-gray-500 hover:decoration-gray-300 focus-visible:outline-offset-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline pointer-events-auto"
 					>
 						Chair of Prof. Adam Caruso
 					</a>
@@ -76,7 +76,7 @@ import '@/styles/global.css'
 						href="https://iea.arch.ethz.ch"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="underline decoration-1 underline-offset-2 decoration-gray-500 hover:decoration-gray-300 focus-visible:outline-offset-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline"
+						class="underline decoration-1 underline-offset-2 decoration-gray-500 hover:decoration-gray-300 focus-visible:outline-offset-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline pointer-events-auto"
 					>
 						Department of Architecture (IEA)
 					</a>.
@@ -87,7 +87,7 @@ import '@/styles/global.css'
 						href="https://re-gards.com"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="underline decoration-1 underline-offset-2 decoration-gray-500 hover:decoration-gray-300 focus-visible:outline-offset-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline"
+						class="underline decoration-1 underline-offset-2 decoration-gray-500 hover:decoration-gray-300 focus-visible:outline-offset-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline pointer-events-auto"
 						>re-gards</a
 					>.
 				</p>
@@ -99,7 +99,7 @@ import '@/styles/global.css'
 					<a
 						title="Email of Florian Kilian Jaritz"
 						href="mailto:mail@fkjaritz.com"
-						class="underline decoration-1 underline-offset-2 decoration-gray-500 hover:decoration-gray-300 focus-visible:outline-offset-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline"
+						class="underline decoration-1 underline-offset-2 decoration-gray-500 hover:decoration-gray-300 focus-visible:outline-offset-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline pointer-events-auto"
 					>
 						mail@fkjaritz.com
 					</a>
@@ -108,7 +108,7 @@ import '@/styles/global.css'
 					<a
 						href="tel:+4901747892062"
 						title="Phone number of Florian Kilian Jaritz"
-						class="underline decoration-1 underline-offset-2 decoration-gray-500 hover:decoration-gray-300 focus-visible:outline-offset-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline"
+						class="underline decoration-1 underline-offset-2 decoration-gray-500 hover:decoration-gray-300 focus-visible:outline-offset-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline pointer-events-auto"
 					>
 						+49 (0) 174 789 2062
 					</a>
@@ -117,7 +117,7 @@ import '@/styles/global.css'
 					<a
 						href="https://www.instagram.com/floriankjaritz"
 						title="Instagram of Florian Kilian Jaritz"
-						class="underline decoration-1 underline-offset-2 decoration-gray-500 hover:decoration-gray-300 focus-visible:outline-offset-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline"
+						class="underline decoration-1 underline-offset-2 decoration-gray-500 hover:decoration-gray-300 focus-visible:outline-offset-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline pointer-events-auto"
 					>
 						@floriankjaritz
 					</a>
@@ -126,10 +126,10 @@ import '@/styles/global.css'
 		</main>
 
 		<script>
-			document.addEventListener('click', function (e) {
+			document.addEventListener('pointerdown', (e) => {
 				let el = e.target as HTMLElement
 				if (el.tagName === 'A') return
-				const htmlTag = el.parentElement as HTMLElement
+				const htmlTag = document.querySelector('html') as HTMLElement
 				const isInverted = htmlTag.classList.contains('dark')
 				if (isInverted) {
 					htmlTag.classList.remove('dark')
