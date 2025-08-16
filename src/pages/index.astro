@@ -1,5 +1,4 @@
 ---
-import BgImage from '@/components/BgImage.astro'
 import '@/styles/global.css'
 ---
 
@@ -31,63 +30,115 @@ import '@/styles/global.css'
 		/>
 	</head>
 	<body
-		class="bg-[#c8c5cb] w-screen h-screen overflow-clip antialiased font-medium"
+		class="bg-[#f2f1f1] w-screen h-screen overflow-clip antialiased font-medium uppercase flex flex-col justify-center items-center leading-tight text-black dark:bg-black dark:text-white"
 	>
-		<BgImage />
+		<script>
+			const htmlTag = document.querySelector('html') as HTMLElement
+			const initialTheme = window.matchMedia('(prefers-color-scheme: dark)')
+				.matches
+				? 'dark'
+				: 'light'
+			htmlTag.classList.add(initialTheme)
+			window
+				.matchMedia('(prefers-color-scheme: dark)')
+				.addEventListener('change', (event) => {
+					const htmlTag = document.querySelector('html') as HTMLElement
+					const isDark = event.matches
+					htmlTag.classList.remove('light', 'dark')
+					htmlTag.classList.add(isDark ? 'dark' : 'light')
+				})
+		</script>
 		<main
-			class="fixed inset-0 z-20 w-screen text-gray-200 p-4 flex flex-col items-center justify-center gap-1"
+			class="w-screen max-xl:py-[10vh] p-4 flex flex-col justify-between xl:grid grid-cols-[2fr_4fr_3fr] text-sm h-screen xl:h-fit xl:gap-8"
 		>
-			<h1
-				class="text-lg bg-black text-white inline-block px-2 py-0.5 mb-12 uppercase italic leading-tight"
-			>
-				Florian Kilian Jaritz
-			</h1>
-			<p class="leading-tight bg-black text-white px-2 py-0.5 text-center">
-				is an architect (MSc. ETH) and researcher based in Zurich, Switzerland.
-			</p>
-			<p class="leading-tight bg-black text-white px-2 py-0.5 text-center">
-				He is co-founder of{' '}
-				<a
-					href="https://re-gards.com"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="underline decoration-1 underline-offset-2 decoration-gray-500 hover:decoration-white transition-colors"
-					>re-gards</a
-				>.
-			</p>
-			<ul class="mt-6
-				flex
-				flex-col
-				gap-0.5
-				justify-center
-				items-center">
+			<h1 class="inline-block">Florian Kilian Jaritz</h1>
+			<div class="flex flex-col">
+				<p class="">
+					is an architect (MSc. ETH) and researcher based in Zurich,
+					Switzerland.
+				</p>
+				<p class="">
+					He holds a B.A. from Berlin University of the Arts (UdK) and a M.Sc.
+					from ETH Zurich.
+				</p>
+				<p class="">
+					He is a teaching assistant to the{' '}
+					<a
+						href="https://caruso.arch.ethz.ch"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="underline decoration-1 underline-offset-2 decoration-gray-500 hover:decoration-gray-300 focus-visible:outline-offset-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline"
+					>
+						Chair of Prof. Adam Caruso
+					</a>
+					at the ETH Zurich{' '}
+					<a
+						href="https://iea.arch.ethz.ch"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="underline decoration-1 underline-offset-2 decoration-gray-500 hover:decoration-gray-300 focus-visible:outline-offset-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline"
+					>
+						Department of Architecture (IEA)
+					</a>.
+				</p>
+				<p class="">
+					In 2024 he co-founded the collaborative practice {' '}
+					<a
+						href="https://re-gards.com"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="underline decoration-1 underline-offset-2 decoration-gray-500 hover:decoration-gray-300 focus-visible:outline-offset-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline"
+						>re-gards</a
+					>.
+				</p>
+			</div>
+			<ul class="flex flex-col">
+				<li>For an extended CV and portfolio please get in touch below.</li>
+				<li aria-hidden="true"><br /></li>
 				<li>
 					<a
 						title="Email of Florian Kilian Jaritz"
 						href="mailto:mail@fkjaritz.com"
-						class="bg-black text-white px-2 py-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+						class="underline decoration-1 underline-offset-2 decoration-gray-500 hover:decoration-gray-300 focus-visible:outline-offset-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline"
 					>
 						mail@fkjaritz.com
 					</a>
 				</li>
 				<li>
 					<a
-						href="https://www.instagram.com/floriankjaritz"
-						title="Instagram of Florian Kilian Jaritz"
-						class="bg-black text-white px-2 py-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+						href="tel:+4901747892062"
+						title="Phone number of Florian Kilian Jaritz"
+						class="underline decoration-1 underline-offset-2 decoration-gray-500 hover:decoration-gray-300 focus-visible:outline-offset-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline"
 					>
-						@floriankjaritz
+						+49 (0) 174 789 2062
 					</a>
 				</li>
 				<li>
 					<a
-						href="tel:+4901747892062"
-						title="Phone number of Florian Kilian Jaritz"
-						class="bg-black text-white px-2 py-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-						>+49 (0) 174 789 2062</a
+						href="https://www.instagram.com/floriankjaritz"
+						title="Instagram of Florian Kilian Jaritz"
+						class="underline decoration-1 underline-offset-2 decoration-gray-500 hover:decoration-gray-300 focus-visible:outline-offset-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline"
 					>
+						@floriankjaritz
+					</a>
 				</li>
 			</ul>
 		</main>
+
+		<script>
+			document.addEventListener('click', function (e) {
+				let el = e.target as HTMLElement
+				if (el.tagName === 'A') return
+				const htmlTag = el.parentElement as HTMLElement
+				const isInverted = htmlTag.classList.contains('dark')
+				if (isInverted) {
+					htmlTag.classList.remove('dark')
+					htmlTag.classList.add('light')
+				} else {
+					htmlTag.classList.add('dark')
+					htmlTag.classList.remove('light')
+				}
+			})
+		</script>
 	</body>
 </html>
